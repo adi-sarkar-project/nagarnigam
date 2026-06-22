@@ -39,10 +39,17 @@ A modern, full-stack complaint management system for municipal corporations, bui
 ## Installation & Setup
 
 ### Prerequisites:
-- Node.js (v18 or higher)
-- MongoDB
-- Cloudinary account
-- Gmail account for email notifications
+1. **Node.js**: Version 18 or higher
+2. **MongoDB**: Installed locally or use MongoDB Atlas
+3. **Cloudinary Account**: For image storage (free tier available at https://cloudinary.com)
+4. **Gmail Account**: For sending emails (with App Password)
+
+### Gmail App Password Setup:
+1. Go to your Google Account
+2. Enable 2-Step Verification
+3. Go to "App Passwords" (under Security)
+4. Create a new app password (select "Mail" and "Other" as the app)
+5. Use this password as `EMAIL_PASS` in your backend `.env` file
 
 ### Backend Setup:
 1. Navigate to the backend folder:
@@ -55,26 +62,23 @@ A modern, full-stack complaint management system for municipal corporations, bui
    npm install
    ```
 
-3. Create a `.env` file in the backend directory with the following content:
-   ```env
-   PORT=5000
-   MONGODB_URI=mongodb://127.0.0.1:27017/urbanresolve
-   JWT_SECRET=your-super-secret-jwt-key-here
-   NODE_ENV=development
-   CLOUDINARY_NAME=your-cloudinary-cloud-name
-   CLOUDINARY_API_KEY=your-cloudinary-api-key
-   CLOUDINARY_API_SECRET=your-cloudinary-api-secret
-   CLOUDINARY_FOLDER=urbanresolve
-   EMAIL_USER=your-email@gmail.com
-   EMAIL_PASS=your-gmail-app-password
+3. Copy the example .env file and update with your credentials:
+   ```bash
+   cp .env.example .env
    ```
 
-4. Seed the admin account:
+4. Open `.env` and update the values:
+   - Replace `JWT_SECRET` with a long, random string
+   - Add your Cloudinary credentials
+   - Add your Gmail email and App Password
+   - (Optional) Update `MONGODB_URI` if using MongoDB Atlas
+
+5. Seed the admin account:
    ```bash
    npm run seed:admin
    ```
 
-5. Start the backend server:
+6. Start the backend server:
    ```bash
    npm run dev
    ```
@@ -90,12 +94,14 @@ A modern, full-stack complaint management system for municipal corporations, bui
    npm install
    ```
 
-3. Create a `.env` file in the frontend directory with the following content:
-   ```env
-   VITE_API_URL=http://localhost:5000/api
+3. Copy the example .env file:
+   ```bash
+   cp .env.example .env
    ```
 
-4. Start the frontend dev server:
+4. (Optional) Update `.env` if your backend is running on a different port
+
+5. Start the frontend dev server:
    ```bash
    npm run dev
    ```
