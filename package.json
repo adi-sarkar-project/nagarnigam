@@ -1,0 +1,16 @@
+{
+  "name": "adi-sarkar-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix frontend install && npm --prefix backend install",
+    "dev": "concurrently \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "backend:dev": "npm --prefix backend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "backend:start": "npm --prefix backend run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

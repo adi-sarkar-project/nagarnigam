@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* URBANRESOLVE Complaint Management — India Tricolor Design System
+   Saffron · White · Green with Navy (Ashoka) accent.
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Saffron — primary */
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 28 100% 60%;
+
+    /* India green — accent */
+    --accent: 130 60% 32%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 130 55% 42%;
+
+    /* Navy (Ashoka) — civic / links / text accents */
+    --navy: 220 80% 28%;
+    --navy-foreground: 0 0% 100%;
+
+    --secondary: 40 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 40 30% 95%;
+    --muted-foreground: 222 15% 40%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status tokens */
+    --status-pending: 0 78% 52%;
+    --status-pending-bg: 0 86% 96%;
+    --status-resolved: 130 60% 32%;
+    --status-resolved-bg: 130 55% 94%;
+
+    --success: 130 60% 32%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 90%;
+    --ring: 24 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Tricolor gradients */
+    --gradient-tricolor: linear-gradient(
+      180deg,
+      hsl(24 100% 50%) 0%,
+      hsl(24 100% 50%) 33%,
+      hsl(0 0% 100%) 33%,
+      hsl(0 0% 100%) 66%,
+      hsl(130 60% 32%) 66%,
+      hsl(130 60% 32%) 100%
+    );
+    --gradient-tricolor-h: linear-gradient(
+      90deg,
+      hsl(24 100% 50%) 0%,
+      hsl(24 100% 50%) 33%,
+      hsl(0 0% 100%) 33%,
+      hsl(0 0% 100%) 66%,
+      hsl(130 60% 32%) 66%,
+      hsl(130 60% 32%) 100%
+    );
+    --gradient-saffron: linear-gradient(135deg, hsl(24 100% 50%), hsl(28 100% 60%));
+    --gradient-green: linear-gradient(135deg, hsl(130 60% 32%), hsl(140 60% 40%));
+    --gradient-navy: linear-gradient(135deg, hsl(220 80% 28%), hsl(220 70% 40%));
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(24 100% 50%) 0%,
+      hsl(24 100% 55%) 40%,
+      hsl(220 80% 35%) 100%
+    );
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 33% 99%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(24 60% 30% / 0.06);
+    --shadow-md: 0 4px 14px -2px hsl(24 60% 30% / 0.10);
+    --shadow-lg: 0 12px 32px -10px hsl(24 60% 30% / 0.20);
+    --shadow-glow: 0 0 32px hsl(24 100% 55% / 0.30);
+
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 24 100% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 40 33% 96%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 40 33% 96%;
+
+    --primary: 24 100% 55%;
+    --primary-foreground: 222 47% 8%;
+    --primary-glow: 28 100% 65%;
+
+    --accent: 130 60% 45%;
+    --accent-foreground: 222 47% 8%;
+    --accent-glow: 130 55% 55%;
+
+    --navy: 220 80% 65%;
+    --navy-foreground: 222 47% 8%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 40 33% 96%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 40 33% 96%;
+
+    --status-pending: 0 78% 60%;
+    --status-pending-bg: 0 60% 18%;
+    --status-resolved: 130 60% 50%;
+    --status-resolved-bg: 130 50% 15%;
+
+    --success: 130 60% 45%;
+    --success-foreground: 222 47% 8%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 47% 8%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 24 100% 55%;
+
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 10%), hsl(222 47% 8%));
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 24 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .gradient-saffron { background: var(--gradient-saffron); }
+  .gradient-green { background: var(--gradient-green); }
+  .gradient-navy { background: var(--gradient-navy); }
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-card { background: var(--gradient-card); }
+  .gradient-tricolor { background: var(--gradient-tricolor); }
+  .gradient-tricolor-h { background: var(--gradient-tricolor-h); }
+  .shadow-elegant { box-shadow: var(--shadow-lg); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .transition-base { transition: var(--transition-base); }
+
+  /* Tricolor stripe used on top of the page */
+  .tricolor-stripe {
+    height: 4px;
+    background: var(--gradient-tricolor-h);
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
+  }
+}
